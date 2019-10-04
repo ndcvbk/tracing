@@ -1,14 +1,11 @@
-Create new logger:
+Get trace headers from a context:
 
 ```
-log := logger.GetInstance("LOGLEVEL")
+headers, found := traceheaders.FromContext(ctx)
 ```
 
-Possible log levels are: trace, debug, info, warning, error, fatal
-
-Create log entry:
+Inject trace headers into the header of an http request:
 
 ```
-log.Warn("Some descriptive string.")
-log.Warn("Some descriptive string with parameters: %s, %d.", "param1", 2)
+headers.Inject(req.Header)
 ```
