@@ -1,4 +1,4 @@
-package traceheaders
+package tracing
 
 import (
 	"context"
